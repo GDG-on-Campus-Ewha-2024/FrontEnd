@@ -5,10 +5,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Blog</title>
+    <header> 
+      <h1>민수의 Simple Blog</h1> 
+      <!-- header 글자는 h1~h6, 크기와 굵기가 달라짐-->
+      
+      <nav>
+        <ul>
+          <li><a href="https://www.naver.com">Home</a></li>
+          <li><a href="https://www.naver.com">Posts</a></li>  
+          <li><a href="https://www.naver.com">About</a></li>
+          <li><a href="https://www.naver.com">Contact</a></li>
+          <!-- li 태그를 각각 달아주면 알아서 적당한 padding..?으로 구분해줌  -->
+        </ul>
+      </nav> 
+      <!-- nav 태그는 다른 페이지로 연결되는 navigation links의 집합 -->
+    </header>
+
     <!-- CSS 파일 연결 -->
     <link rel="stylesheet" href="index.css" />
   </head>
+
+
+
   <body>
-    
+    <main>
+      <h2>Welcome to My Blog!</h2>
+      <p>안녕하세요! GDSC Frontend Part 멤버 김민수입니다!</p>
+
+      <h2>블로그 포스트 #1</h2>
+      <p>~~~</p>
+      
+      <h2>블로그 포스트 #2</h2>
+      <p>!!!~</p>
+
+      <article>
+        <aside>
+          <h2>읽어보면 좋을 자료!</h2>
+          <ul>
+            <li><a href="https://www.naver.com">자료 1</a></li>
+            <li><a href="https://www.naver.com">자료 2</a></li>  
+            <li><a href="https://www.naver.com">자료 3</a></li>
+          </ul>
+        </aside>
+      </article>
+    </main>
   </body>
+
+  <footer style = "padding:20px">
+    Contact (Email): ms_0710_@naver.com
+  </footer>
 </html>
