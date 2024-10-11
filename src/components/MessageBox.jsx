@@ -1,7 +1,7 @@
 // MessageBox component
 
 const MessageBox = () => {
-  return <div></div>;
+  return <></>;
 };
 
 export default MessageBox;
