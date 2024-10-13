@@ -6,18 +6,18 @@
 
 export default function Home() {
   return (
-    <div>
-      <div className="flex flex-col items-center">
+    <main className="bg-[#FFDDE3] w-full h-[100dvh]">
+      <div className="flex flex-col items-center gap-[10px]">
         <div className="flex flex-col items-center gap-[20px]">
           <h1 className="text-[50px] font-['Changwon']">연말 편지 우체통</h1>
           <h5 className="font-['Hakyo']">
             양승혜님의 연말 편지 우체통으로 00건의 편지가 도착했어요!
           </h5>
         </div>
-        <button className="w-[200px] h-[50px] font-['Changwon'] border-[1px] bg-[#B61111] text-white rounded-lg shadow-lg">
+        <button className="w-[200px] h-[50px] font-['Hakyo'] border-[1px] bg-[#B61111] text-white rounded-lg shadow-lg">
           편지쓰러 가기
         </button>
       </div>
-    </div>
+    </main>
   );
 }
