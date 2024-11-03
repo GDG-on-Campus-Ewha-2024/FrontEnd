@@ -7,10 +7,16 @@
 import Header from "../components/Header";
 import Image from "next/image";
 import GoogleIcon from "../images/image.png";
+import MessageBox from "@/components/MessageBox";
 
 export default function Home() {
+  const MOCK_MESSAGE_LIST = [
+    { name: "양승혜", message: "안녕하세요" },
+    { name: "양승혜", message: "안녕하세요" },
+  ];
+
   return (
-    <main className="bg-[#FFDDE3] w-full h-[100dvh]">
+    <main className="bg-[#FFDDE3] w-full h-[100vh]">
       <Header>
         <button className="bg-white flex gap-[5px] py-[5px] px-[7px] rounded-md">
           <Image src={GoogleIcon} alt="구글아이콘" width={30} height={30} />
@@ -27,6 +33,9 @@ export default function Home() {
         <button className="w-[200px] h-[50px] font-['Hakyo'] border-[1px] bg-[#B61111] text-white rounded-lg shadow-lg">
           편지쓰러 가기
         </button>
+        {MOCK_MESSAGE_LIST.map((el, idx) => (
+          <MessageBox key={idx} name={el.name} message={el.message} />
+        ))}
       </div>
     </main>
   );
