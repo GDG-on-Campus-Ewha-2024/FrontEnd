@@ -1,16 +1,21 @@
 import MessageBox from "@/components/MessageBox";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import instance from "@/api/instance";
 
 export default function Home() {
   const [messages, setMessages] = useState([]);
   const router = useRouter();
+  const userName = "용가리";
 
   async function getMessageData() {
     try {
-      const response = await fetch("/data/Message.json");
-      const data = await response.json();
-      setMessages(data.Message);
+      const response = await instance.get(`/messages?name=${userName}`);
+      if (response.status === 200) {
+        const fetchedMsg = response.data;
+        setMessages(fetchedMsg);
+        console.log("편지 가져오기 성공");
+      }
     } catch (error) {
       console.error("메세지를 가져오지 못했습니다.");
     }
@@ -26,7 +31,7 @@ export default function Home() {
         연말 편지 우체통
       </h1>
       <h3 className="mt-[30px] font-bold text-[20px] font-['TTLaundryGothicB']">
-        💌 강다형님의 연말 편지 우체통으로 {messages.length}건의 편지가
+        💌 {userName}님의 연말 편지 우체통으로 {messages.length}건의 편지가
         도착했어요!
       </h3>
       <button
@@ -41,8 +46,8 @@ export default function Home() {
         {messages.map((message, index) => (
           <MessageBox
             key={index}
-            user={message.user}
-            content={message.content}
+            user={message.fromName}
+            content={message.message}
           />
         ))}
       </div>
