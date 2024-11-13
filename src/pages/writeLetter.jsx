@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function WriteLetter() {
   const [content, setContent] = useState("");
   const [toName, setToName] = useState("");
-  const userName = "용가리";
+  const userName = "익명";
 
   const [wordCount, setWordCount] = useState("0");
 
@@ -33,6 +33,7 @@ export default function WriteLetter() {
       if (response.status === 200) {
         console.log("편지 작성 성공:", response.data);
 
+        alert(`${toName}님께 편지가 전송되었어요!`);
         setContent("");
         setWordCount("0");
         setToName("");

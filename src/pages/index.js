@@ -26,7 +26,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col w-screen h-screen bg-back items-center">
+    <main className="flex flex-col w-screen min-h-screen bg-back items-center">
       <h1 className="text-[70px] font-['TTLaundryGothicB'] text-black pt-[60px]">
         연말 편지 우체통
       </h1>
