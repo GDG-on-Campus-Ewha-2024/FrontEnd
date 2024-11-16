@@ -3,43 +3,12 @@
 @tailwind utilities;
 
 /* Global CSS 파일에 font-face 설정 */
-@font-face {
-  font-family: "Changwon";
-  src: url("/fonts/ChangwonDangam.otf");
-}
-@font-face {
-  font-family: "Hakyo";
-  src: url("/fonts/Hakgyoansim.otf");
+
+@font-face{
+  font-family: 'moneygraphy';
+  src: url("/fonts/moneygraphy.ttf");
 }
 
-.header{
-  display:flex;
-  justify-content:space-between;
-  align-itms:center;
-  background-color:#800020;
-  color:white;
-  padding:1rem 2rem;
-  font-size:1.2rem;
-}
-
-.title{
-  font-weight:bold;
-}
-
-.login{
-  background-color:white;
-  color:black;
-  border:none;
-  padding:0.5rem 1rem;
-  font-size: 1rem;
-  border-radius:4px;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 @layer utilities {
   .text-balance {
