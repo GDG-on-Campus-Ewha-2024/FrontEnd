@@ -3,20 +3,12 @@
 @tailwind utilities;
 
 /* Global CSS 파일에 font-face 설정 */
-@font-face {
-  font-family: "Changwon";
-  src: url("/fonts/ChangwonDangam.otf");
-}
-@font-face {
-  font-family: "Hakyo";
-  src: url("/fonts/Hakgyoansim.otf");
+
+@font-face{
+  font-family: 'moneygraphy';
+  src: url("/fonts/moneygraphy.ttf");
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 @layer utilities {
   .text-balance {
