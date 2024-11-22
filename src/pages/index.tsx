@@ -1,16 +1,24 @@
+import Image from "next/image";
 import MessageBox from "@/components/MessageBox";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import instance from "@/api/instance";
 
+interface Message {
+  fromName: string;
+  message: string;
+}
+
 export default function Home() {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const router = useRouter();
   const userName = "용가리";
 
   async function getMessageData() {
     try {
-      const response = await instance.get(`/messages?name=${userName}`);
+      const response = await instance.get<Message[]>(
+        `/messages?name=${userName}`
+      );
       if (response.status === 200) {
         const fetchedMsg = response.data;
         setMessages(fetchedMsg);

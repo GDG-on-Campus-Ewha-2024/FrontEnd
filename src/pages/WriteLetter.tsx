@@ -1,16 +1,16 @@
-import Button from "../components/Button.jsx";
-import Letter from "../components/Letter.jsx";
-import instance from "../api/instance.js";
+import Button from "../components/Button";
+import Letter from "../components/Letter";
+import instance from "../api/instance";
 import { useState } from "react";
 
 export default function WriteLetter() {
-  const [content, setContent] = useState("");
-  const [toName, setToName] = useState("");
+  const [content, setContent] = useState<string>("");
+  const [toName, setToName] = useState<string>("");
   const userName = "익명";
 
-  const [wordCount, setWordCount] = useState("0");
+  const [wordCount, setWordCount] = useState<number>(0);
 
-  const handleInput = (e) => {
+  const handleInput = (e: any) => {
     setContent(e.target.value);
     setWordCount(e.target.value.length);
   };
@@ -35,7 +35,7 @@ export default function WriteLetter() {
 
         alert(`${toName}님께 편지가 전송되었어요!`);
         setContent("");
-        setWordCount("0");
+        setWordCount(0);
         setToName("");
       }
     } catch (error) {

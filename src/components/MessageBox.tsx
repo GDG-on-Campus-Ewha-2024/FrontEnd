@@ -2,7 +2,12 @@
 import Image from "next/image";
 import ribbon from "../../public/images/ribbon.png";
 
-const MessageBox = ({ user, content }) => {
+interface MessageBoxProps {
+  user: string;
+  content: string;
+}
+
+const MessageBox = ({ user, content }: MessageBoxProps) => {
   return (
     <div className="relative w-[300px] h-[200px] border-4 border-strong bg-white rounded-[25px]">
       <Image
