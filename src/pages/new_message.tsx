@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useRouter } from 'next/router';
@@ -9,7 +9,13 @@ const api = axios.create({
   baseURL: 'http://ec2-3-38-49-253.ap-northeast-2.compute.amazonaws.com:8080/',
 });
 
-function new_message() {
+interface newMessage {
+  toName: string;
+  fromName: string;
+  message: string;
+}
+
+function new_message({ toName, fromName, message }: newMessage) {
   const router = useRouter();
 
   const schema = yup.object().shape({
@@ -21,15 +27,15 @@ function new_message() {
       .required(),
   });
 
-  const { register, handleSubmit, watch } = useForm({
+  const { register, handleSubmit } = useForm<newMessage>({
     resolver: yupResolver(schema),
     mode: 'onChange',
   });
 
-  const onSubmit = async (data) => {
+  const onSubmit: SubmitHandler<newMessage> = async (data) => {
     const requestData = {
       ...data,
-      type: 'string',
+      type: 'text',
     };
     console.log('폼 데이터 제출: ', requestData);
 
@@ -43,11 +49,6 @@ function new_message() {
     }
   };
 
-  const formValues = watch();
-  useEffect(() => {
-    console.log('현재 폼 값:', formValues);
-  }, [formValues]);
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="bg-sky-50 w-screen h-screen flex flex-col items-center gap-6">
@@ -59,7 +60,6 @@ function new_message() {
             To.{' '}
             <input
               type="text"
-              name="toName"
               {...register('toName')}
               className="border-b-[3px] border-black bg-sky-50 text-2xl font-normal"
             />
@@ -68,15 +68,12 @@ function new_message() {
             From.{' '}
             <input
               type="text"
-              name="fromName"
               {...register('fromName')}
               className="border-b-[3px] border-black bg-sky-50 text-2xl font-normal"
             />
           </label>
         </div>
         <textarea
-          type="text"
-          name="message"
           {...register('message')}
           className="w-7/12 h-60 flex flex-wrap border-blue-500 border-[2px] font-medium text-xl"
         />
