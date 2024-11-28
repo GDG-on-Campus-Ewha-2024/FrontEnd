@@ -14,8 +14,13 @@ const api = axios.create({
   baseURL: 'http://ec2-3-38-49-253.ap-northeast-2.compute.amazonaws.com:8080/',
 });
 
+interface homeProps{
+  message: string;
+  fromName: string
+}
+
 export default function Home() {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<homeProps[]>([]);
   const router = useRouter();
   const name = '김예린';
 
