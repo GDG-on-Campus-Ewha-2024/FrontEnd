@@ -10,7 +10,7 @@ export default function WriteLetter() {
 
   const [wordCount, setWordCount] = useState<number>(0);
 
-  const handleInput = (e: any) => {
+  const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setContent(e.target.value);
     setWordCount(e.target.value.length);
   };

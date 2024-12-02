@@ -45,7 +45,7 @@ export default function Home() {
       <button
         className="px-[110px] py-[8px] mt-[25px] text-[20px] bg-strong rounded-[5px] font-semibold text-white font-['TTLaundryGothicB']"
         onClick={() => {
-          router.push("/WriteLetter");
+          router.push("/writeLetter");
         }}
       >
         편지 쓰러 가기

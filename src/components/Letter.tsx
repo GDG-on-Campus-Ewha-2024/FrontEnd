@@ -1,6 +1,6 @@
 interface LetterProps {
   value: string;
-  onChange: (e: any) => void;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   placeholderText: string;
 }
 
