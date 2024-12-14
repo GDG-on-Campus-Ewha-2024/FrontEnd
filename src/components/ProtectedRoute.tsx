@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
+import Cookies from "js-cookie";
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-  const isAuthenticated = false;
+  const isAuthenticated = Boolean(Cookies.get("accessToken"));
   const router = useRouter();
   const redirected = useRef(false);
 
