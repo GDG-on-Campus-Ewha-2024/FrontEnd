@@ -18,8 +18,8 @@ const googleLogin = () => {
         Cookies.set("accessToken", response.data.access_token, {
           expires: 1,
         });
-        const name = response.data.name || "익명";
-        Cookies.set("userName", name, { expires: 1 });
+        const name = response.data.name;
+        Cookies.set("userName", name || "익명", { expires: 1 });
         router.push("/");
       }
     } catch (error) {
@@ -33,7 +33,7 @@ const googleLogin = () => {
     getUserInfo();
   }, [code]);
 
-  return <div>구글 로그인 처리중...</div>;
+  return <div className="bg-back w-full h-screen">구글 로그인 처리중...</div>;
 };
 
 export default googleLogin;

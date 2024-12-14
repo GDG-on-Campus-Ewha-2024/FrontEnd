@@ -10,7 +10,6 @@ export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <>
       <Header />
-
       {isProtected ? (
         <ProtectedRoute>
           <Component {...pageProps} />
