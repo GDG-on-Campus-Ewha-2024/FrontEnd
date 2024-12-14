@@ -2,22 +2,23 @@ import Button from "../components/Button";
 import Letter from "../components/Letter";
 import instance from "../api/instance";
 import { useState } from "react";
+import Cookies from "js-cookie";
 
 export default function WriteLetter() {
   const [content, setContent] = useState<string>("");
-  const [toName, setToName] = useState<string>("");
-  const userName = "익명";
+  const toName = "용가리";
+  const userName = Cookies.get("userName");
 
   const [wordCount, setWordCount] = useState<number>(0);
 
-  const handleInput = (e: any) => {
+  const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setContent(e.target.value);
     setWordCount(e.target.value.length);
   };
 
   const handleSumbit = async () => {
-    if (!content || !toName) {
-      alert("받을 사람과 편지를 모두 입력해주세요!");
+    if (!content) {
+      alert("편지를 입력해주세요!");
       return;
     }
 
@@ -36,7 +37,6 @@ export default function WriteLetter() {
         alert(`${toName}님께 편지가 전송되었어요!`);
         setContent("");
         setWordCount(0);
-        setToName("");
       }
     } catch (error) {
       console.error("편지 작성 오류:", error);
@@ -47,14 +47,8 @@ export default function WriteLetter() {
   return (
     <div className="bg-back h-screen w-screen flex items-center flex-col">
       <h3 className="mt-[80px] font-['TTLaundryGothicB'] text-[30px]">
-        💌
-        <input
-          className="w-[150px] h-10 bg-transparent border-b-2 border-black mx-2 focus:outline-none text-center"
-          placeholder="받을 사람"
-          onChange={(e) => setToName(e.target.value)}
-          value={toName}
-        ></input>
-        님께 편지를 써주세요!
+        💌<span className="text-[#c44f6f] px-2">{toName}</span>님께 편지를
+        써주세요!
       </h3>
       <section className="mt-[50px]">
         <Letter
@@ -63,7 +57,7 @@ export default function WriteLetter() {
           placeholderText={"편지를 작성해주세요!"}
         />
         <section className="flex justify-between">
-          <span>{wordCount}/100</span>
+          <span className="text-gray-500">{wordCount}/100</span>
           <span className="font-['TTLaundryGothicB'] text-[25px] mt-3">
             From. {userName}
           </span>
