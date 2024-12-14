@@ -2,11 +2,12 @@ import Button from "../components/Button";
 import Letter from "../components/Letter";
 import instance from "../api/instance";
 import { useState } from "react";
+import Cookies from "js-cookie";
 
 export default function WriteLetter() {
   const [content, setContent] = useState<string>("");
   const [toName, setToName] = useState<string>("");
-  const userName = "익명";
+  const userName = Cookies.get("name");
 
   const [wordCount, setWordCount] = useState<number>(0);
 
@@ -17,7 +18,7 @@ export default function WriteLetter() {
 
   const handleSumbit = async () => {
     if (!content || !toName) {
-      alert("받을 사람과 편지를 모두 입력해주세요!");
+      alert("쓰는 사람과 편지를 모두 입력해주세요!");
       return;
     }
 

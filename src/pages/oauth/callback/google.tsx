@@ -15,11 +15,11 @@ const googleLogin = () => {
         `/oauth/callback?code=${code}&provider=google`
       );
       if (response.status == 200) {
-        console.log(response.data);
         Cookies.set("accessToken", response.data.access_token, {
           expires: 1,
         });
-        Cookies.set("userName", response.data.name, { expires: 1 });
+        const name = response.data.name || "익명";
+        Cookies.set("userName", name, { expires: 1 });
         router.push("/");
       }
     } catch (error) {
