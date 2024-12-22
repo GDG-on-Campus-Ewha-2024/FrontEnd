@@ -7,7 +7,7 @@ const Button = ({ text, onClick }: ButtonProps) => {
   return (
     <div>
       <button
-        className="w-[200px] h-[50px] border-[3px] border-strong font-['TTLaundryGothicB'] bg-blue-100 rounded-[15px] text-[20px]"
+        className="w-[200px] h-[50px] border-[2px] border-[#c44f6f] font-['TTLaundryGothicB'] bg-[#ffe3ed] rounded-[15px] text-[20px]"
         onClick={onClick}
       >
         {text}

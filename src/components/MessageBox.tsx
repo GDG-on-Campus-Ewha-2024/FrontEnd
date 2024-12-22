@@ -16,8 +16,10 @@ const MessageBox = ({ user, content }: MessageBoxProps) => {
         alt="jingle-bell"
       />
       <div className="p-5 pt-[50px]  ">
-        <h3 className="font-semibold text-[20px]">From. {user}</h3>
-        <p className="text-[17px]">{content}</p>
+        <h3 className="font-semibold text-[20px] font-['TTLaundryGothicB']">
+          From. {user}
+        </h3>
+        <p className="text-[17px] font-['GowunDodum']">{content}</p>
       </div>
     </div>
   );
