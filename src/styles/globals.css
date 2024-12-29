@@ -4,12 +4,24 @@
 
 /* Global CSS 파일에 font-face 설정 */
 @font-face {
-  font-family: "Changwon";
-  src: url("/fonts/ChangwonDangam.otf");
+  font-family: "Saemaeul-R";
+  src: url("/fonts/HSSaemaeul-Regular.ttf");
 }
 @font-face {
-  font-family: "Hakyo";
-  src: url("/fonts/Hakgyoansim.otf");
+  font-family: "Laundry-B";
+  src: url("/fonts/LAUNDRY-Bold.woff");
+}
+@font-face {
+  font-family: "Laundry-R";
+  src: url("/fonts/LAUNDRY-Regular.woff");
+}
+@font-face {
+  font-family: "Gwangyang-B";
+  src: url("/fonts/GWANGYANG SUNSHINE-Bold.OTF");
+}
+@font-face {
+  font-family: "Gwangyang-R";
+  src: url("/fonts/GWANGYANG SUNSHINE-Regular.OTF");
 }
 
 body {

@@ -1,19 +1,40 @@
-# 📌 GDG FrontEnd Session 과제 Repository!😇
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
-### ✏️ 멤버별 깃허브 세팅 & 과제 업로드 방법
-1. 각자 이름별로 Git Branch를 판다! (ex: FE-김기연, 첫 주차는 FE-김기연-Session1으로)
-2. 각자 현재 이 GDG-on-Campus-Ewha-2024/FrontEnd 레포지토리를 본인의 원격 레포지토리로 Fork 한다! 
-> **이때 main만 가져오지말고 전체 브랜치 가져오게 설정!
-> 하단 그림 참고하여 저부분 체크표시 해제!
-<img width="400" alt="Screenshot 2024-09-15 at 3 55 26 PM" src="https://github.com/user-attachments/assets/d075a412-b6cc-4077-9699-4b1331ad8398">
+## Getting Started
 
-> Fork한 본인 레포지토리가 이런식으로 본인이 만든 본인 브랜치가 있으면 잘 된거에요!
-<img width="400" alt="Screenshot 2024-09-15 at 3 58 29 PM" src="https://github.com/user-attachments/assets/6610341e-a705-41c3-a43a-24b8714c378b">
+First, run the development server:
 
-<br></br>
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-3. 본인의 레포로 Fork한 파일을 Clone해서 각자 로컬 저장소에 저장한다!!
-4. 각자 로컬 저장소에서 과제 코드를 작성하고, 다 작성했거나 중간중간 코드 임시저장하려면 **본인의 Fork한 리모트 레포지토리의 본인 Branch에** Push하여 올린다! **(꼭 본인 브랜치에!!!!)**
-5. 모두 구현하여 최종코드를 작성했다면, **이 Remote Repository의 본인 브랜치**에 Pull Request를 올린다!! (main에 PR올리면 안됨!)
-6. 각 주차에 해당하는 과제 내용은 과제설명/n주차과제/n주차과제.md 의 내용을 보면 됩니다 :)
-7. 궁금한 것은 언제나 카톡 혹은 디스코드로 물어보세요! (디코 권장!!)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+
+[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+
+This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
